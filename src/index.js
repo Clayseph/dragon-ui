@@ -5,7 +5,8 @@ import * as firebase from 'firebase/app';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const firebaseConfig = require('./secret_auth_config.json');
+const secret = process.env.SECRET || './secret_auth_config.json';
+const firebaseConfig = require(secret);
 
 firebase.initializeApp(firebaseConfig);
 
